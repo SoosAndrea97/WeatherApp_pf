@@ -1,0 +1,39 @@
+<body>
+<mat-card>
+  <h1>Időjárás előrejelzés</h1>
+  <div>Add meg a települést</div><br>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-select [(value)]="selected" placeholder="Budapest">
+        <!-- TODO use the cities array to populate this select with options -->
+        <mat-option *ngFor="let city of cities" [value]="city">{{city.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button type="button" (click)="updateResults(selected!)">Mutasd az időjárást</button>
+  <div><br>
+    <h1>{{selected?.name}}</h1><!-- TODO this should match the selected city-->
+    <table *ngIf="selected" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Dátum </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef> Idő </th>
+        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="temp">
+        <th mat-header-cell *matHeaderCellDef> Várható hőmérséklet </th>
+        <td mat-cell *matCellDef="let element"> {{element.temp}} °C </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSize]="6"></mat-paginator>
+  </div>
+</mat-card>
+</body>

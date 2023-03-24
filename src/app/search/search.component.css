@@ -1,0 +1,36 @@
+body{
+  background: url("src/assets/background.jpg");
+}
+mat-card{
+  border-radius: 20px;
+  width: 25%;
+  opacity: 70%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  transform: translateY(-50%);
+}
+.mat-card>:first-child{
+  font-weight: bold;
+}
+button{
+  background: #335461;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border:none;
+}
+/*table*/
+th,td {
+  border-bottom: 1px solid #ddd;
+}
+table {
+  width: 100%;
+}
+.mat-form-field-infix{
+  padding:unset !important;
+}
+.mat-elevation-z8{
+  box-shadow: none;
+}

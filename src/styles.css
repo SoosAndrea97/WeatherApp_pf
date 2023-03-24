@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*paginator*/
+.mat-paginator-page-size-label{
+  display: none;
+}
+.mat-paginator-page-size-value{
+  display: none;
+}
+/*button*/
+.mat-form-field-appearance-outline .mat-form-field-infix{
+  padding: 0 0 0.5em 0 !important;
+}
+.mat-select-placeholder{
+  color:black;
+}
